@@ -1,0 +1,220 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    transition: background 160ms ease;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.navScrolled {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.logoText {
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    /* blue-600 → purple-600 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    /* keep “Sudeep” on one line */
+    line-height: 1;
+}
+
+
+/* ---------- Brand ---------- */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.brandMark {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: white;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+}
+
+.brandText {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brandName {
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.brandRole {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* ---------- Desktop Navigation ---------- */
+.desktop {
+    display: none;
+    align-items: center;
+    width: 100%;
+}
+
+/* navigation links */
+.navLinks {
+    display: flex;
+    gap: 28px;
+    margin-left: auto;
+}
+
+/* subtle icon group on the far right */
+.iconGroup {
+    margin-left: 24px;
+    /* visual connection to nav */
+    display: flex;
+    align-items: center;
+    opacity: 0.75;
+    /* de-emphasised */
+    transition: opacity 120ms ease;
+}
+
+.iconGroup:hover {
+    opacity: 1;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    /* slate-600 */
+    padding: 12px 0;
+    transition: color 120ms ease, font-weight 120ms ease;
+}
+
+.link:hover {
+    color: var(--blue);
+}
+
+/* ACTIVE = TYPOGRAPHY ONLY */
+.active {
+    color: #1d4ed8;
+    /* blue-700 */
+    font-weight: 700;
+}
+
+.iconBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    color: #475569;
+    /* slate-600 */
+    transition: color 120ms ease;
+}
+
+.iconBtn:hover {
+    color: var(--blue);
+}
+
+
+/* ---------- Mobile ---------- */
+.mobileBtn {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.mobilePanel {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.mobileCard {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.mobileLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 18px 20px;
+    transition: color 120ms ease, font-weight 120ms ease;
+}
+
+.mobileLink:hover {
+    color: var(--blue);
+}
+
+/* ACTIVE = TYPOGRAPHY ONLY */
+.mobileActive {
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.chev {
+    color: #94a3b8;
+    font-size: 18px;
+}
+
+.mobileSocial {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 18px 20px;
+    color: #0f172a;
+}
+
+.mobileSocial:hover {
+    color: var(--blue);
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 768px) {
+    .desktop {
+        display: flex;
+    }
+
+    .mobileBtn,
+    .mobilePanel {
+        display: none;
+    }
+}

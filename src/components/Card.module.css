@@ -1,0 +1,35 @@
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+.title {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+
+.subtitle {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.body {
+    color: var(--text);
+}
+
+.footer {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+    font-size: 13px;
+}
