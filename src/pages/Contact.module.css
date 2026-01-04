@@ -1,6 +1,6 @@
 /* Page */
 .page {
-    background: var(--bgSoft);
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 45%, #faf5ff 100%);
     padding: 64px 0;
 }
 

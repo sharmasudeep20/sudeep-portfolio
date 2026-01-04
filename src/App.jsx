@@ -1,10 +1,11 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import Projects from "./pages/Projects.jsx";
 import Contact from "./pages/Contact.jsx";
 import ProjectDetails from "./pages/ProjectDetails.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 
 
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects/:slug" element={<ProjectDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

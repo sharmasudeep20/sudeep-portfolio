@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import Container from "../components/Container.jsx";
+import Seo from "../components/Seo.jsx";
 import shell from "./PageShell.module.css";
 import styles from "./Contact.module.css";
 import { Mail, Phone, MapPin, Linkedin, Github, Instagram } from "lucide-react";
@@ -96,6 +97,11 @@ export default function Contact() {
 
     return (
         <div className={shell.page}>
+            <Seo
+                title="Contact"
+                description="Get in touch with Sudeep Sharma for data engineering and software development opportunities."
+                path="/contact"
+            />
             <section className={styles.page}>
                 <Container wide>
                     <header className={styles.header}>

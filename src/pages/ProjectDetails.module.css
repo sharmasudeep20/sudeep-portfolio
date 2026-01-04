@@ -198,6 +198,71 @@
   background: rgba(239, 68, 68, 0.06);
 }
 
+/* Skeleton */
+.skeleton {
+  display: grid;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.skeletonTitle,
+.skeletonMeta,
+.skeletonLead,
+.skeletonCover,
+.skeletonLine,
+.skeletonLineShort {
+  background: linear-gradient(90deg, #eef2ff 0%, #f8fafc 50%, #eef2ff 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 12px;
+}
+
+.skeletonTitle {
+  height: 44px;
+  width: 70%;
+}
+
+.skeletonMeta {
+  height: 20px;
+  width: 40%;
+}
+
+.skeletonLead {
+  height: 20px;
+  width: 80%;
+}
+
+.skeletonCover {
+  height: 260px;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.skeletonBody {
+  display: grid;
+  gap: 12px;
+}
+
+.skeletonLine {
+  height: 14px;
+  width: 100%;
+}
+
+.skeletonLineShort {
+  height: 14px;
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 /* =========================
    More projects (bottom)
    ========================= */

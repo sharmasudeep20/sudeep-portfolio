@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Container from "../components/Container.jsx";
+import Seo from "../components/Seo.jsx";
 import styles from "./Home.module.css";
 import shell from "./PageShell.module.css";
 import { ChevronRight } from "lucide-react";
@@ -32,12 +33,13 @@ export default function Home() {
         { title: "Data Architecture & Modelling", skills: ["Data Warehousing", "Schema Design", "Data Modelling"] },
         { title: "Business Intelligence & Analytics", skills: ["Power BI(DAX, Data Modelling, Enterprise Dashboards)", "Google Analytics", "SPSS"] },
         { title: "Cloud & Data Platforms", skills: ["Microsoft Azure", "Microsoft Fabric", "AWS", "Google Cloud"] },
-        { title: "Programming and Scripting", skills: ["Python", "Java", "C#", "PowerShell", "Batch"] },
+        { title: "Programming and Scripting", skills: ["Python", "Java", "C#", "Shell", "Bash"] },
         { title: "Version Control & Collaboration", skills: ["Git", "GitHub", "Bitbucket", "SVN"] },
     ];
 
     return (
         <div className={shell.page}>
+            <Seo title="Home" path="/" />
             <section className={styles.hero}>
                 <Container wide>
                     <div className={styles.heroGrid}>

@@ -2,12 +2,15 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Container from "../components/Container.jsx";
+import Seo from "../components/Seo.jsx";
 import shell from "./PageShell.module.css";
 import styles from "./ProjectDetails.module.css";
+import NotFound from "./NotFound.jsx";
 import { sanity } from "../lib/sanityClient";
 import { urlFor } from "../lib/sanityImage";
 import { PortableText } from "@portabletext/react";
 import { ExternalLink } from "lucide-react";
+import { trackEvent } from "../lib/analytics.js";
 
 const PROJECT_QUERY = `
 *[_type == "project" && slug.current == $slug][0]{
@@ -132,7 +135,18 @@ export default function ProjectDetails() {
       <div className={shell.page}>
         <section className={styles.page}>
           <Container>
-            <div className={styles.notice}>{state.message}</div>
+            <Seo title="Loading project" description="Loading project details." />
+            <div className={styles.skeleton}>
+              <div className={styles.skeletonTitle} />
+              <div className={styles.skeletonMeta} />
+              <div className={styles.skeletonLead} />
+              <div className={styles.skeletonCover} />
+              <div className={styles.skeletonBody}>
+                <div className={styles.skeletonLine} />
+                <div className={styles.skeletonLine} />
+                <div className={styles.skeletonLineShort} />
+              </div>
+            </div>
           </Container>
         </section>
       </div>
@@ -144,6 +158,7 @@ export default function ProjectDetails() {
       <div className={shell.page}>
         <section className={styles.page}>
           <Container>
+            <Seo title="Project unavailable" description={state.message} />
             <div className={styles.noticeError}>{state.message}</div>
             <Link to="/projects" className={styles.back}>
               ← Back to projects
@@ -154,19 +169,12 @@ export default function ProjectDetails() {
     );
   }
 
+  if (state.status === "notfound") {
+    return <NotFound variant="project" />;
+  }
+
   if (!project) {
-    return (
-      <div className={shell.page}>
-        <section className={styles.page}>
-          <Container>
-            <div className={styles.notice}>Project not found.</div>
-            <Link to="/projects" className={styles.back}>
-              ← Back to projects
-            </Link>
-          </Container>
-        </section>
-      </div>
-    );
+    return <NotFound variant="project" />;
   }
 
   const coverUrl = project.coverImage
@@ -177,6 +185,11 @@ export default function ProjectDetails() {
     <div className={shell.page}>
       <section className={styles.page}>
         <Container>
+          <Seo
+            title={project.title}
+            description={project.summary || "Project details and highlights."}
+            path={`/projects/${project.slug?.current || ""}`}
+          />
  
           <header className={styles.hero}>
             <h1 className={styles.h1}>{project.title}</h1>
@@ -239,7 +252,18 @@ export default function ProjectDetails() {
             {project.link ? (
               <>
                 <h2 className={styles.h2} id="links">Links</h2>
-                <a className={styles.ext} href={project.link} target="_blank" rel="noreferrer">
+                <a
+                  className={styles.ext}
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() =>
+                    trackEvent("outbound_click", {
+                      label: project.title,
+                      url: project.link,
+                    })
+                  }
+                >
                   External project link <ExternalLink size={16} />
                 </a>
               </>
@@ -285,7 +309,16 @@ export default function ProjectDetails() {
                         {p.summary ? <p className={styles.moreDesc}>{p.summary}</p> : null}
 
                         {pSlug ? (
-                          <Link className={styles.moreLink} to={`/projects/${pSlug}`}>
+                          <Link
+                            className={styles.moreLink}
+                            to={`/projects/${pSlug}`}
+                            onClick={() =>
+                              trackEvent("project_click", {
+                                label: p.title,
+                                slug: pSlug,
+                              })
+                            }
+                          >
                             View details
                           </Link>
                         ) : (
