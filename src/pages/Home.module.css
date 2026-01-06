@@ -381,8 +381,348 @@
     border-radius: 14px;
 }
 
+/* Combined Experience Section */
+.expSection {
+  padding: 64px 0;
+}
+
+.expGrid {
+  display: grid;
+  gap: 18px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.expCard {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.companyName {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.companyMeta {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.sep {
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+.roleCount {
+  color: #64748b;
+}
+
+.companySummary {
+  margin: 10px 0 14px;
+  color: #334155;
+  line-height: 1.75;
+  max-width: 80ch;
+}
+
+/* Progression list */
+.roleList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.roleItem {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  margin-top: 6px;
+  flex: 0 0 auto;
+}
+
+.roleContent {
+  border-left: 2px solid rgba(37, 99, 235, 0.14);
+  padding-left: 14px;
+}
+
+.roleTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.roleTitle {
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.current {
+  font-size: 11px;
+  font-weight: 850;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--blue);
+}
+
+.roleDate {
+  margin-top: 2px;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 650;
+}
+
+/* Highlights */
+.impact {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.impactTitle {
+  font-size: 13px;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.impactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  color: #334155;
+}
+
+.impactItem {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  line-height: 1.65;
+}
+
+.chev {
+  margin-top: 2px;
+  color: var(--blue);
+}
+
+.moreBtn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+
+  border-top: 1px solid var(--border);
+  margin-top: 14px;
+}
+
+.moreLabel {
+  font-size: 13px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.moreHint {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.moreBtn:hover .moreHint {
+  text-decoration: underline;
+}
+
+/* Highlights toggle sits in the middle of the card */
+.highlightsWrap {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+/* Centered “Show more” control */
+.expandBtn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 0;
+  color: #475569;
+  font-weight: 850;
+  font-size: 13px;
+}
+
+.expandBtn:hover {
+  color: #0f172a;
+}
+
+.expandText {
+  line-height: 1;
+}
+
+.expandIcon {
+  transition: transform 140ms ease;
+}
+
+/* Expanded content inside card */
+.highlightsInner {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.highlightsTitle {
+  font-size: 13px;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  color: #334155;
+}
+
+.highlightsItem {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  line-height: 1.65;
+}
 
 
+/* Responsive */
+@media (max-width: 720px) {
+  .expCard {
+    padding: 16px;
+  }
+}
+.duration {
+  font-size: 13px;
+  font-weight: 850;
+  color: #0f172a;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.expCardBreak .duration {
+  background: rgba(15, 23, 42, 0.06);
+  color: #475569;
+}
+/* Career Section */
+.career {
+  padding: 64px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline {
+  display: grid;
+  gap: 36px;
+}
+
+.company {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.roleList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.roleItem {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.roleContent {
+  border-left: 2px solid rgba(37, 99, 235, 0.15);
+  padding-left: 14px;
+}
+
+.roleTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.roleTitle {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.current {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--blue);
+}
+
+.roleDate {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 2px;
+}
 
 
 
