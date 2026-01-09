@@ -161,7 +161,7 @@ export default function Projects() {
     <div className={shell.page}>
       <Seo
         title="Projects"
-        description="A collection of projects showcasing data engineering, software development, and cloud expertise."
+        description="A Selection of Projects I’ve Worked On"
         path="/projects"
       />
 
