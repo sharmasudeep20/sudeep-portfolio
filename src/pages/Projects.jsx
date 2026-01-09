@@ -173,7 +173,7 @@ export default function Projects() {
               <p className={styles.eyebrow}>Featured work</p>
               <h1 className={styles.h1}>Projects</h1>
               <p className={styles.sub}>
-                A curated selection of projects across data engineering, software development, and cloud technologies.
+                A Selection of Projects I’ve Worked On.
               </p>
 
               <div className={styles.ctas}>
