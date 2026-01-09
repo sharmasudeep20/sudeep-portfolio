@@ -1,119 +1,119 @@
 .hero {
-    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 45%, #faf5ff 100%);
-    padding: 64px 0 56px;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 45%, #faf5ff 100%);
+  padding: 64px 0 56px;
 }
 
 .heroGrid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 40px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
 }
 
 .h1 {
-    margin: 0 0 10px;
-    font-size: 48px;
-    line-height: 1.05;
-    letter-spacing: -0.6px;
+  margin: 0 0 10px;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -0.6px;
 }
 
 .gradientText {
-    background: linear-gradient(90deg, var(--blue), var(--purple));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .role {
-    margin: 0 0 16px;
-    font-size: 20px;
-    color: #475569;
+  margin: 0 0 16px;
+  font-size: 20px;
+  color: #475569;
 }
 
 .lead {
-    margin: 0 0 22px;
-    font-size: 16px;
-    line-height: 1.75;
-    color: #334155;
-    max-width: 65ch;
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #334155;
+  max-width: 65ch;
 }
 
 .ctas {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .primary {
-    text-decoration: none;
-    background: var(--blue);
-    color: white;
-    padding: 12px 18px;
-    border-radius: 12px;
-    font-weight: 650;
-    box-shadow: var(--shadow);
+  text-decoration: none;
+  background: var(--blue);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 650;
+  box-shadow: var(--shadow);
 }
 
 .primary:hover {
-    background: #1d4ed8;
+  background: #1d4ed8;
 }
 
 .secondary {
-    text-decoration: none;
-    border: 2px solid var(--blue);
-    color: var(--blue);
-    padding: 11px 18px;
-    border-radius: 12px;
-    font-weight: 650;
-    background: transparent;
+  text-decoration: none;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-weight: 650;
+  background: transparent;
 }
 
 .secondary:hover {
-    background: rgba(37, 99, 235, 0.06);
+  background: rgba(37, 99, 235, 0.06);
 }
 
 .heroRight {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 
 
 @keyframes drift {
-    0% {
-        transform: translateY(0px) scale(1);
-    }
+  0% {
+    transform: translateY(0px) scale(1);
+  }
 
-    50% {
-        transform: translateY(-10px) scale(1.03);
-    }
+  50% {
+    transform: translateY(-10px) scale(1.03);
+  }
 
-    100% {
-        transform: translateY(0px) scale(1);
-    }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
 }
 
 .avatar {
-    width: 88%;
-    height: 88%;
-    border-radius: 50%;
-    overflow: hidden;
+  width: 88%;
+  height: 88%;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .avatarWrap {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: transparent;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: transparent;
 }
 
 .popOutWrap {
-    position: relative;
-    width: 320px;
-    height: 380px;
+  position: relative;
+  width: 320px;
+  height: 380px;
 }
 
 
@@ -122,268 +122,268 @@
 
 /* FOREGROUND IMAGE */
 .popImg {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
 
-    transform: translateX(-50%);
-    height: 420px;
-    /* ⬅️ explicit image height */
-    width: auto;
-    object-fit: contain;
+  transform: translateX(-50%);
+  height: 420px;
+  /* ⬅️ explicit image height */
+  width: auto;
+  object-fit: contain;
 
-    z-index: 1;
-    pointer-events: none;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .sectionWhite {
-    background: white;
-    padding: 64px 0;
+  background: white;
+  padding: 64px 0;
 }
 
 .sectionSoft {
-    background: var(--bgSoft);
-    padding: 64px 0;
+  background: var(--bgSoft);
+  padding: 32px 0 64px;
 }
 
 .h2 {
-    margin: 0 0 22px;
-    font-size: 30px;
-    text-align: center;
+  margin: 0 0 22px;
+  font-size: 30px;
+  text-align: center;
 }
 
 .skillsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
 }
 
 .skillCard {
-    background: linear-gradient(135deg, #eff6ff 0%, #faf5ff 100%);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 18px;
-    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.06);
-    transition: box-shadow 140ms ease, transform 140ms ease;
+  background: linear-gradient(135deg, #eff6ff 0%, #faf5ff 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 2px 14px rgba(15, 23, 42, 0.06);
+  transition: box-shadow 140ms ease, transform 140ms ease;
 }
 
 .skillCard:hover {
-    box-shadow: var(--shadow);
-    transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
 }
 
 .cardTitle {
-    margin: 0 0 10px;
-    font-size: 18px;
+  margin: 0 0 10px;
+  font-size: 18px;
 }
 
 .list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: 8px;
-    color: #334155;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: #334155;
 }
 
 .li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .chev {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .eduGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
 }
 
 .eduCard {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 18px;
-    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.06);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 2px 14px rgba(15, 23, 42, 0.06);
 }
 
 .eduTitle {
-    margin: 0 0 6px;
-    font-size: 18px;
-    color: var(--blue);
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: var(--blue);
 }
 
 .eduSchool {
-    margin: 0;
-    font-weight: 650;
-    color: #334155;
+  margin: 0;
+  font-weight: 650;
+  color: #334155;
 }
 
 .eduNote {
-    margin: 8px 0 0;
-    color: #64748b;
+  margin: 8px 0 0;
+  color: #64748b;
 }
 
 .subText {
-    margin: 0 0 28px;
-    text-align: center;
-    color: #64748b;
-    font-size: 15px;
+  margin: 0 0 28px;
+  text-align: center;
+  color: #64748b;
+  font-size: 15px;
 }
 
 .expStack {
-    display: grid;
-    gap: 24px;
-    max-width: 980px;
-    margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 .expCard {
-    background: #fff;
-    border-radius: 18px;
-    padding: 26px 28px;
-    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.06);
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px 28px;
+  box-shadow: 0 2px 14px rgba(15, 23, 42, 0.06);
 }
 
 .expTop {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
 }
 
 .expTitle {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 800;
-    color: #0f172a;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
 }
 
 .expCompany {
-    margin: 6px 0 0;
-    color: #2563eb;
-    font-weight: 650;
+  margin: 6px 0 0;
+  color: #2563eb;
+  font-weight: 650;
 }
 
 .expPeriod {
-    margin: 2px 0 0;
-    color: #475569;
-    font-weight: 600;
-    white-space: nowrap;
+  margin: 2px 0 0;
+  color: #475569;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .expList {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
 }
 
 .expItem {
-    display: flex;
-    gap: 10px;
-    color: #334155;
-    line-height: 1.65;
+  display: flex;
+  gap: 10px;
+  color: #334155;
+  line-height: 1.65;
 }
 
 .expBullet {
-    color: #2563eb;
-    font-size: 20px;
-    line-height: 1;
-    margin-top: 1px;
-    flex: 0 0 auto;
+  color: #2563eb;
+  font-size: 20px;
+  line-height: 1;
+  margin-top: 1px;
+  flex: 0 0 auto;
 }
 
 .heroImageWrap {
-    position: relative;
-    width: 460px;
-    height: 400px;
-    display: grid;
-    place-items: center;
-    justify-self: end;
+  position: relative;
+  width: 460px;
+  height: 400px;
+  display: grid;
+  place-items: center;
+  justify-self: end;
 }
 
 
 
 .heroBgBlob {
-    position: absolute;
-    width: 380px;
-    height: 340px;
+  position: absolute;
+  width: 380px;
+  height: 340px;
 
-    left: 50%;
-    top: 50%;
-    transform: translate(-44%, -50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-44%, -50%);
 
-    background: linear-gradient(135deg,
-            rgba(37, 99, 235, 0.16),
-            rgba(124, 58, 237, 0.16));
+  background: linear-gradient(135deg,
+      rgba(37, 99, 235, 0.16),
+      rgba(124, 58, 237, 0.16));
 
-    border-radius: 42% 58% 63% 37% / 46% 42% 58% 54%;
-    z-index: 0;
-    pointer-events: none;
+  border-radius: 42% 58% 63% 37% / 46% 42% 58% 54%;
+  z-index: 0;
+  pointer-events: none;
 
-    animation: blobMorph 16s ease-in-out infinite, blobFloat 10s ease-in-out infinite;
+  animation: blobMorph 16s ease-in-out infinite, blobFloat 10s ease-in-out infinite;
 }
 
 
 
 .heroImageMask {
-    position: absolute;
-    width: 380px;
-    height: 340px;
+  position: absolute;
+  width: 380px;
+  height: 340px;
 
-    left: 50%;
-    top: 50%;
-    transform: translate(-44%, -50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-44%, -50%);
 
-    border-radius: 42% 58% 63% 37% / 46% 42% 58% 54%;
-    overflow: hidden;
-    z-index: 2;
-    pointer-events: none;
+  border-radius: 42% 58% 63% 37% / 46% 42% 58% 54%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
 }
 
 
 
 
 .heroImgMasked {
-    position: absolute;
-    left: 50%;
-    bottom: -22px;
-    transform: translateX(-50%);
-    height: 330px;
-    width: auto;
-    object-fit: contain;
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%);
+  height: 330px;
+  width: auto;
+  object-fit: contain;
 }
 
 .heroDots {
-    position: absolute;
-    width: 140px;
-    height: 110px;
+  position: absolute;
+  width: 140px;
+  height: 110px;
 
-    left: 50%;
-    top: 50%;
-    transform: translate(10%, -78%);
-    z-index: 1;
-    pointer-events: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(10%, -78%);
+  z-index: 1;
+  pointer-events: none;
 
-    opacity: 0.55;
+  opacity: 0.55;
 
-    background-image:
-        radial-gradient(rgba(37, 99, 235, 0.35) 1.2px, transparent 1.2px),
-        radial-gradient(rgba(124, 58, 237, 0.28) 1.2px, transparent 1.2px);
-    background-size: 14px 14px;
-    background-position: 0 0, 7px 7px;
-    border-radius: 14px;
+  background-image:
+    radial-gradient(rgba(37, 99, 235, 0.35) 1.2px, transparent 1.2px),
+    radial-gradient(rgba(124, 58, 237, 0.28) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+  background-position: 0 0, 7px 7px;
+  border-radius: 14px;
 }
 
 /* Combined Experience Section */
 .expSection {
-  padding: 64px 0;
+  padding: 8px;
 }
 
 .expGrid {
@@ -637,6 +637,7 @@
     padding: 16px;
   }
 }
+
 .duration {
   font-size: 13px;
   font-weight: 850;
@@ -651,6 +652,7 @@
   background: rgba(15, 23, 42, 0.06);
   color: #475569;
 }
+
 /* Career Section */
 .career {
   padding: 64px 0;
@@ -732,93 +734,93 @@
 
 
 .heroBgShape {
-    animation: floatSoft 8s ease-in-out infinite;
+  animation: floatSoft 8s ease-in-out infinite;
 }
 
 
 @media (max-width: 900px) {
-    .heroGrid {
-        grid-template-columns: 1fr;
-    }
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
 
-    .h1 {
-        font-size: 38px;
-    }
+  .h1 {
+    font-size: 38px;
+  }
 
-    .skillsGrid {
-        grid-template-columns: 1fr;
-    }
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
 
-    .eduGrid {
-        grid-template-columns: 1fr;
-    }
+  .eduGrid {
+    grid-template-columns: 1fr;
+  }
 
-    .avatar {
-        width: 260px;
-        height: 260px;
-        font-size: 54px;
-    }
+  .avatar {
+    width: 260px;
+    height: 260px;
+    font-size: 54px;
+  }
 
-    .avatarWrap {
-        width: 260px;
-        height: 260px;
-    }
+  .avatarWrap {
+    width: 260px;
+    height: 260px;
+  }
 
 
-    .popOutWrap {
-        width: 260px;
-        height: 380px;
-    }
+  .popOutWrap {
+    width: 260px;
+    height: 380px;
+  }
 
-    .popCircle {
-        width: 210px;
-        height: 210px;
-        bottom: 32px;
-    }
+  .popCircle {
+    width: 210px;
+    height: 210px;
+    bottom: 32px;
+  }
 
-    .popImg {
-        height: 330px;
-    }
+  .popImg {
+    height: 330px;
+  }
 
-    .expCard {
-        padding: 20px;
-    }
+  .expCard {
+    padding: 20px;
+  }
 
-    .expTop {
-        flex-direction: column;
-    }
+  .expTop {
+    flex-direction: column;
+  }
 
-    .expPeriod {
-        white-space: normal;
-    }
+  .expPeriod {
+    white-space: normal;
+  }
 
-    .heroImageWrap {
-        width: 320px;
-        height: 300px;
-        justify-self: center;
-    }
+  .heroImageWrap {
+    width: 320px;
+    height: 300px;
+    justify-self: center;
+  }
 
-    .heroBgBlob,
-    .heroImageMask {
-        width: 260px;
-        height: 240px;
-        transform: translate(-50%, -50%);
-    }
+  .heroBgBlob,
+  .heroImageMask {
+    width: 260px;
+    height: 240px;
+    transform: translate(-50%, -50%);
+  }
 
-    .heroDots {
-        width: 110px;
-        height: 90px;
-        transform: translate(0%, -82%);
-        opacity: 0.45;
-    }
+  .heroDots {
+    width: 110px;
+    height: 90px;
+    transform: translate(0%, -82%);
+    opacity: 0.45;
+  }
 
-    .heroImg,
-    .heroImgMasked {
-        height: 240px;
-    }
+  .heroImg,
+  .heroImgMasked {
+    height: 240px;
+  }
 
-    .heroImgMasked {
-        bottom: -16px;
-    }
+  .heroImgMasked {
+    bottom: -16px;
+  }
 
 }

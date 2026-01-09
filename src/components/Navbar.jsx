@@ -30,11 +30,11 @@ export default function Navbar() {
     return (
         <nav className={navClass}>
             <div className={styles.inner}>
-                <a className={styles.brand} href="/" aria-label="Go to home">
+                <NavLink to="/" className={styles.brand} aria-label="Go to home">
                     <span className={styles.logoText}>
                         {'<Sudeep /> | Builds'}
                     </span>
-                </a>
+                </NavLink>
 
 
                 <div className={styles.desktop}>
@@ -96,7 +96,7 @@ export default function Navbar() {
 
                             <a
                                 className={styles.mobileSocial}
-                                href="https://www.linkedin.com/in/sharma-sudeep/"
+                                href={contactInfo.linkedin}
                                 target="_blank"
                                 rel="noreferrer"
                             >

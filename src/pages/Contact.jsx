@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Container from "../components/Container.jsx";
 import Seo from "../components/Seo.jsx";
 import shell from "./PageShell.module.css";
@@ -8,11 +8,31 @@ import { contactInfo } from "../data/dummyData";
 import emailjs from "@emailjs/browser";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const RATE_LIMIT_SECONDS = 60; // Cooldown period between submissions
 
 export default function Contact() {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [touched, setTouched] = useState({ name: false, email: false, message: false });
-    const [status, setStatus] = useState({ type: "idle", message: "" }); // idle | sending | success | error
+    const [status, setStatus] = useState({ type: "idle", message: "" }); // idle | sending | success | error | ratelimited
+    const [lastSubmitTime, setLastSubmitTime] = useState(0);
+    const [cooldownRemaining, setCooldownRemaining] = useState(0);
+
+    // Update cooldown timer every second
+    useEffect(() => {
+        if (cooldownRemaining <= 0) return;
+
+        const timer = setInterval(() => {
+            const elapsed = Math.floor((Date.now() - lastSubmitTime) / 1000);
+            const remaining = Math.max(0, RATE_LIMIT_SECONDS - elapsed);
+            setCooldownRemaining(remaining);
+
+            if (remaining === 0 && status.type === "ratelimited") {
+                setStatus({ type: "idle", message: "" });
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, [cooldownRemaining, lastSubmitTime, status.type]);
 
     const errors = useMemo(() => {
         const e = {};
@@ -24,11 +44,12 @@ export default function Contact() {
     }, [formData]);
 
     const hasErrors = Object.keys(errors).length > 0;
+    const isRateLimited = cooldownRemaining > 0;
 
     const onChange = (e) => {
         const { id, value } = e.target;
         setFormData((p) => ({ ...p, [id]: value }));
-        if (status.type !== "idle") setStatus({ type: "idle", message: "" });
+        if (status.type === "error") setStatus({ type: "idle", message: "" });
     };
 
     const onBlur = (e) => {
@@ -39,6 +60,15 @@ export default function Contact() {
     const onSubmit = async (e) => {
         e.preventDefault();
         setTouched({ name: true, email: true, message: true });
+
+        // Check rate limit
+        if (isRateLimited) {
+            setStatus({
+                type: "ratelimited",
+                message: `Please wait ${cooldownRemaining} seconds before sending another message.`,
+            });
+            return;
+        }
 
         if (hasErrors) {
             setStatus({ type: "error", message: "Please fix the highlighted fields and try again." });
@@ -72,6 +102,11 @@ export default function Contact() {
             } catch (autoReplyError) {
                 console.warn("EmailJS auto-reply failed:", autoReplyError);
             }
+
+            // Set rate limit timer
+            const now = Date.now();
+            setLastSubmitTime(now);
+            setCooldownRemaining(RATE_LIMIT_SECONDS);
 
             setStatus({ type: "success", message: "Thanks! Your message has been sent." });
             setFormData({ name: "", email: "", message: "" });
@@ -177,7 +212,7 @@ export default function Contact() {
                                         <Github size={20} />
                                     </a>
 
-                                       <a
+                                    <a
                                         className={styles.socialBtn}
                                         href={contactInfo.instagram}
                                         target="_blank"
@@ -262,8 +297,8 @@ export default function Contact() {
                                     )}
                                 </div>
 
-                                <button className={styles.submit} type="submit" disabled={status.type === "sending"}>
-                                    {status.type === "sending" ? "Sending..." : "Send Message"}
+                                <button className={styles.submit} type="submit" disabled={status.type === "sending" || isRateLimited}>
+                                    {status.type === "sending" ? "Sending..." : isRateLimited ? `Wait ${cooldownRemaining}s...` : "Send Message"}
                                 </button>
                             </form>
                         </div>

@@ -25,4 +25,6 @@ dist-ssr
 *.sw?
 .env
 src/data/dummyData.js
+studio-sudeep-portfolio
+
 
